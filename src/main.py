@@ -11,7 +11,7 @@ def main():
         video.read()
         video.release()
     else:
-        test = "/home/christian/Downloads/meme.mp4"
+        test = "/home/christian/Downloads/meme2.mp4"
         video = Video(test)
         video.open()
         video.read()
