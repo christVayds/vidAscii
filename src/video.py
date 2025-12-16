@@ -3,10 +3,10 @@ import time
 
 class Video:
 
-    def __init__(self, videofile):
+    def __init__(self, videofile, level=0):
         self.videofile = videofile
         self.ascii_chars = ["@#$%&WMOo*+xv:.,' ", "@%#*+=-:. "]
-        self.level = 0
+        self.level = level
         self.cap = cv2.VideoCapture(self.videofile)
 
     def open(self):
@@ -22,7 +22,7 @@ class Video:
         fps = self.cap.get(cv2.CAP_PROP_FPS)
         delay = int(1000 / fps)
         loopdelay = 1 / fps
-        print(f"FPS: {delay}")
+        # print(f"FPS: {delay}")
         while running:
             ret, frame = self.cap.read()
 
